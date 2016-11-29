@@ -7,15 +7,9 @@
 FILENAME=$1
 HOMEDIR=/home/ubuntu
 CURRENTPATH=$(pwd)
-<<<<<<< HEAD
 export PATH=$HOMEDIR/nanopolish:$PATH
 export PATH=$HOMEDIR/canu/Linux-amd64/bin/:$PATH
 export PATH=$HOMEDIR/transrate/:$PATH
-=======
-export PATH=$HOMEDIR/nanopolish:$PATH  #add nanopolish
-export PATH=$HOMEDIR/canu/Linux-amd64/bin/canu:$PATH #add canu
-export PATH=$HOMEDIR/
->>>>>>> 38fd381ef1d06b121bdc08587865822667c785e3
 
 
 if [-z $1 |-z $2] #if either command line argument 1 or argument 2 are empty
