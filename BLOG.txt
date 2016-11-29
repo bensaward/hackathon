@@ -32,4 +32,4 @@ Get at least one pipeline going, so Canu and then nanopolish. Once we get module
 Ctrl^C. Facepalm.
 
 --End of Day 2
-As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. \n The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Lets hope dawn is error message free and a bit warmer. 
+As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Lets hope dawn is error message free and a bit warmer. 
