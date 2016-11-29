@@ -26,4 +26,10 @@ with our new plan we have made a new pipeline and identified the programs we nee
 Conrad came to see us and gave us some help, although not such good news. We have a few more things to think about. 1)Data size, the yeast reads in total are something like half a terabyte so he only sent us 5gb worth which was already a lot for the DTP computers to handle, good news is though that we have a running AWS server. 2)Latest release of Nanopolish actually takes 1D reads and we're not sure if nanocorrect takes 1D reads, possibly not, plus we need to make sure the version of nanopore the reads were made with matches the version of nanopore which nanopolish/correct is made for. 3)Canu seems to do more than nanocorrect does, we need to work out how nanocorrect would fit into the pipeline. 4) When using canu we need to get information about the size of the genome, the longest reads and things like that. 4)Downstream genome assembly assessment will be strange as the coverage may be so low, will need to think about this
 
 --Current plan
-At least get one pipeline going, so Canu and then nanopolish. Once we get some pipelines up and running with the 5gb of reads we could look at feeding through more of the reads (which may take a long time) on AWS
+Get at least one pipeline going, so Canu and then nanopolish. Once we get modules in pipeline up and running with the 5gb of reads we could look at feeding through more of the reads (which may take a long time) on AWS. Ben is also planning to write a shell script so that the pipeline can be joined together and run from a single command line!
+
+--Accident
+Ctrl^C. Facepalm.
+
+--End of Day 2
+As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Lets hope dawn is error message free and a bit warmer. 
