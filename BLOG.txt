@@ -6,7 +6,7 @@ Day 1
 Is it possible to change the parameters of nanocorrect or nanopolish in order to optimise de-novo assembly
 
 --A plan
-Reverse enginner the nanopolish code to find where the statistical parameters are put in. We want to extract these values and put them into a file which we can iteratively change so that we can compute the values for the best possible assembly. Following on - try this on different species
+Reverse engineer the nanopolish code to find where the statistical parameters are put in. We want to extract these values and put them into a file which we can iteratively change so that we can compute the values for the best possible assembly. Following on - try this on different species
 
 --Difficulties
 Code is complex and not straighforward. Nanocorrect may be out of date. We need data. 
@@ -32,4 +32,4 @@ Get at least one pipeline going, so Canu and then nanopolish. Once we get module
 Ctrl^C. Facepalm.
 
 --End of Day 2
-As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Lets hope dawn is error message free and a bit warmer. 
+As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Let's hope dawn is error message free and a bit warmer. 
