@@ -33,3 +33,18 @@ Ctrl^C. Facepalm.
 
 --End of Day 2
 As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Let's hope dawn is error message free and a bit warmer. 
+
+--Late night. Still Day 2.
+Canu not really working, might be that the small amount of yeast data we can run at a time is simply not enough to form a sequence assembly. Found some alternative raw nanopore data - e.coli - which has a genome ~3x smaller. Still a large amount of data but might be more feasible.
+
+Day 3
+
+--Silly yeast
+No luck with the yeast genome data, when run in canu the output file (contigs.fasta) is empty. Probably because coverage is so low that no contigs can be assembled. On the plus side we have got the e-coli data downloaded and going ahead with that.
+
+--Canu, canu, canu
+Problems with Canu are occuring. It seems to run with the ecoli data but still the contigs.fasta folder is empty and we can't work out why. The ecoli data is 2D raw nanopore reads. We are only inputting the forward reads to try and simulte 1D data as we need this for nanopolish (I think). The time it takes to run canu and find it doesn't work is makingus think we might need a new plan. Emailed Conrad for help.
+
+--Update
+We are trying to canu anything we can to make it work. Ben has started on a side project - investigating a way to amplify low coverage reads artifically by making copies of the fasta files with a mind to then use them to make an assembly, possibly following some manual introduction of mutations. 
+
