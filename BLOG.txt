@@ -33,3 +33,9 @@ Ctrl^C. Facepalm.
 
 --End of Day 2
 As night closes in we say goodbye to our computers, leaving them running with important tasks, and hoping Eoin doesn't remote turn them all off in a fit of rage. The plan has been scaled back somewhat dramatically and now we're taking each step at a time. Let's hope dawn is error message free and a bit warmer. 
+
+--Late night. Still Day 2.
+Canu not really working, might be that the small amount of yeast data we can run at a time is simply not enough to form a sequence assembly. Found some alternative raw nanopore data - e.coli - which has a genome ~3x smaller. Still a large amount of data but might be more feasible.
+
+Day 3
+
