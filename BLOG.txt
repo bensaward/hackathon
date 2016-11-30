@@ -39,3 +39,11 @@ Canu not really working, might be that the small amount of yeast data we can run
 
 Day 3
 
+--Silly yeast
+No luck with the yeast genome data, when run in canu the output file (contigs.fasta) is empty. Probably because coverage is so low that no contigs can be assembled. On the plus side we have got the e-coli data downloaded and going ahead with that.
+
+--Canu, canu, canu
+Problems with Canu are occuring. It seems to run with the ecoli data but still the contigs.fasta folder is empty and we can't work out why. The ecoli data is 2D raw nanopore reads. We are only inputting the forward reads to try and simulte 1D data as we need this for nanopolish (I think). The time it takes to run canu and find it doesn't work is makingus think we might need a new plan. Emailed Conrad for help.
+
+
+
