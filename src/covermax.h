@@ -1,6 +1,10 @@
 // covermax.h
 #ifndef COVERMAX
 #define COVERMAX
+//draw function from rand if value is smaller than these
+#define SKIP 0.7
+#define INDELRATE 0.92
+//#define KMERDEL 1.0
 
 typedef unsigned short uint8_t;
 //////////////////////////
@@ -8,8 +12,10 @@ typedef unsigned short uint8_t;
 ////////////////////////
 
 int get_fasta_chunk (FILE *fp, char **header_var, char **data, size_t header_size, size_t data_size);
-int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4, char **var5,*/ size_t sizes, size_t coverage);
+int amplify (char **source, size_t sizes, size_t coverage);
 void mutate(char *source, size_t coverage, size_t length);
+char generateindel();
+int generatekmerdel(char **input, int mutation_pos, size_t length);
 ////////////////////////
 /// define functions //
 //////////////////////
@@ -50,7 +56,7 @@ int get_fasta_chunk(FILE *fp, char **header_var, char **data, size_t header_size
     return 0;
 }
 
-int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4, char **var5,*/ size_t sizes, size_t coverage) //returns number of mutation calls
+int amplify (char **source, size_t sizes, size_t coverage) //returns number of mutation calls
 {
     switch (sizes/1000)
     {
@@ -108,11 +114,11 @@ int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4
                 char *variable2=malloc(sizeof(char)*5000);
                 variable2=*source+midpoint+1;
                 strncpy(variable1, *source, midpoint);
-                amplify(&variable1, strlen(variable1), coverage/2);
-                amplify(&variable2, strlen(variable2), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
+                amplify(&variable2, strlen(variable2), coverage);
                 free(variable2);
                 variable1=*source+(sizeof(char)*midpoint/2);
-                amplify(&variable1, strlen(variable1), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
                 free(variable1);
                 return 4;
             }
@@ -136,11 +142,11 @@ int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4
                 char *variable2=malloc(sizeof(char)*15000);
                 variable2=*source+midpoint+1;
                 strncpy(variable1, *source, midpoint);
-                amplify(&variable1, strlen(variable1), coverage/2);
-                amplify(&variable2, strlen(variable2), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
+                amplify(&variable2, strlen(variable2), coverage);
                 free(variable2);
                 variable1=*source+(sizeof(char)*midpoint/2);
-                amplify(&variable1, strlen(variable1), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
                 free(variable1);
                 return 4;
             }
@@ -150,11 +156,11 @@ int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4
                 char *variable2=malloc(sizeof(char)*25000);
                 variable2=*source+midpoint+1;
                 strncpy(variable1, *source, midpoint);
-                amplify(&variable1, strlen(variable1), coverage/2);
-                amplify(&variable2, strlen(variable2), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
+                amplify(&variable2, strlen(variable2), coverage);
                 free(variable2);
                 variable1=*source+(sizeof(char)*midpoint/2);
-                amplify(&variable1, strlen(variable1), coverage/2);
+                amplify(&variable1, strlen(variable1), coverage);
                 free(variable1);
                 return 4;
             }
@@ -165,36 +171,69 @@ int amplify (char **source, /*char **var1, char **var2, char **var3, char **var4
 void mutate(char *source, size_t coverage, size_t length)
 {
     FILE *fout=fopen("covermax.fasta", "a");
-    char savedchar;
+    char *mutatedstring=malloc(sizeof(char)*length);
+    float drawmutationmode;
+    size_t mutatedstringlen;
     for (int i=0; i<coverage; i++)
     {
+        strcpy(mutatedstring, source);
+        mutatedstringlen=strlen(mutatedstring);
         fprintf(fout, ">%d-%d-%d-mutate.fasta\n", rand(), rand(), i);
-        int position=rand()%length;
-        int base_option=rand()%4;
-        savedchar=source[position];
-        switch (base_option)
+        for (int pos=0; pos<mutatedstringlen; pos++)
         {
-            case 0:
+            drawmutationmode=rand()/RAND_MAX; //get random float between 0.0 and 1
+            if (drawmutationmode > SKIP && drawmutationmode <= INDELRATE) // float is between 0.700..1 and 0.85
             {
-                source[position]='A';
+                mutatedstring[pos]=generateindel();
+                printf("point mutation!\n");
             }
-             case 1:
+            if (drawmutationmode > INDELRATE)
             {
-                source[position]='C';
-            }
-             case 2:
-            {
-                source[position]='G';
-            }
-             case 3:
-            {
-                source[position]='T';
+                int kmerdeletedlen=generatekmerdel(&mutatedstring, pos, strlen(mutatedstring));
+                mutatedstringlen-=kmerdeletedlen;
+                printf("kmer deletion\n");
             }
         }
-        fprintf(fout, "%s\n", source);
-        source[position]=savedchar;
+        fprintf(fout, "%s\n", mutatedstring);
     }
 
 }
 
+char generateindel()
+{
+    int base_option=rand()%4;
+    switch (base_option)
+        {
+            case 0:
+            {
+                return 'A';
+            }
+             case 1:
+            {
+                return 'C';
+            }
+             case 2:
+            {
+                return'G';
+            }
+             case 3:
+            {
+                return 'T';
+            }
+        }
+}
+
+int generatekmerdel(char **input, int mutation_pos, size_t length) //return kmer length deleted
+{
+    int kmersize=(rand()%3)+4; //kmer length between 4-6
+    char *beforedel=malloc(sizeof(char)*length);
+    char *afterdel=malloc(sizeof(char)*length);
+    beforedel=*input;
+    afterdel=*input+mutation_pos;
+    *afterdel='\0';
+    afterdel+=kmersize;
+    strcpy(*input, beforedel);
+    strcat(*input, afterdel);
+    return kmersize;
+}
 #endif
