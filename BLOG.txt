@@ -64,7 +64,7 @@ Ran a mapping assembly of the 2D ecoli reads which showed that the reads in the 
 Food needed. 
 
 --OMFG
-THE PROBLEM WITH CANU MIGHT OF BEEN A VERSION ISSUE. Ran the BC01 reads on AWS instead and got much better contig lengths. Can't belive this. Re-running the ecoli data now.
+THE PROBLEM WITH CANU MIGHT OF BEEN A VERSION ISSUE. Ran the BC01 reads on AWS instead and got much better contig lengths. Can't belive this. Re-running the ecoli data now. The suspense is killing me. 
 
 
 
