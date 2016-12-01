@@ -63,7 +63,8 @@ Day 4. The pressure heats up. Coffee is a flowing. Snacks abound. Plans today: C
 Ran a mapping assembly of the 2D ecoli reads which showed that the reads in the file cover the whole ecoli genome. So the problem must be with the parameters or something in canu. Similar thing (short contig length) has happened with Cam's run of the EC01 data. Grrrr. 
 Food needed. 
 
-
+--OMFG
+THE PROBLEM WITH CANU MIGHT OF BEEN A VERSION ISSUE. Ran the BC01 reads on AWS instead and got much better contig lengths. Can't belive this. Re-running the ecoli data now.
 
 
 
