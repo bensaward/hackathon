@@ -52,6 +52,7 @@ int get_fasta_chunk(FILE *fp, char **header_var, char **data, size_t header_size
         fgets(buffer, 255, fp);
 
     }
+    printf("returning filepointer to: %d\n", lastpipeposition);
     fseek(fp, lastpipeposition, SEEK_SET); //rewind our file pointer
     return 0;
 }
