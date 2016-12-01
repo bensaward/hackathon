@@ -48,3 +48,16 @@ Problems with Canu are occuring. It seems to run with the ecoli data but still t
 --Update
 We are trying to canu anything we can to make it work. Ben has started on a side project - investigating a way to amplify low coverage reads artifically by making copies of the fasta files with a mind to then use them to make an assembly, possibly following some manual introduction of mutations. 
 
+--End of day 3
+Managed to get some data out of canu using the Normal 2D reads for the ecoli data. Canu assembled 7 contigs, the longest of which is 24000 which is small considering the genome is 4.6MB. Not sure what the problem is there. Cam has started running canu on some new data, the BC01 bacteria, the data for which is already on our machines. 
+
+Day 4
+
+--Deep in the early hours
+Ben has gone on a coding bender. We have no idea what he has done, there is a file on github but deciphering the C (or C++??) is another story. It is something to do with the side project mentioned earlier and we await his arrival to be enlightened. 
+
+--Morning 10.30am
+Day 4. The pressure heats up. Coffee is a flowing. Snacks abound. Plans today: Cam is still running canu on this new bacteria data, looking more hopeful. I (Rona) am going to run the ecoli data with a different assembler to try and see if the issue is with the data or canu. Harriet is  working hard on the prezi presentation, trying to spin some story out of this. And ben...he has not yet emerged from the night of coding (understandably) but thanks to him we now have a much more beefier github repository. 
+
+
+
