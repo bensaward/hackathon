@@ -72,5 +72,13 @@ Did not make any difference running the E.coli data on the AWS. Jumping ship on 
 --Afternoon
 Presentation coming on great thanks to Cam and Harriet. Ben is coding away, making a program to simulate increased read coverage. Me? Writing the blog, still thinking about Canu, generally running assembly comparisons and keeping out of google slide battles.
 
+--BC01 bacteria is actually ecoli in disguise 
+So we thought we were working with BC01 data. After QUASTing our canu assembly with the BC01 reference genome and getting no alignment we BLASTed it and actually found a 100% match to ecoli. GARRRRR. The BC01 data on the computers was ACTUALLY ecoli data, which can be seen if you look a bit closer at the >headers in the fasta files. HAHAHAHAHAHA. Oh my. Did the alingnment with the ecoli reference and it is good! What a waste of time. With the right reference we got a 85.2% from the canu assembly!!!!!!!
+
+--End of the day (well at least the day at the DTC)
+Actually feel like we have achieved something! We got an 85% genome assembly from raw ecoli nanopore reads. Just a shame we were held back by incorrect file names as it would be good to run nanopolish now but I'm not sure there is enough time. If we could do this then our whole pipeline would pretty much be achieved.  
+
+
+
 
 
