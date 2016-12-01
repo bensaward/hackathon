@@ -9,4 +9,5 @@ Trying to find out if the idea is actually possible to implement:
 So it seems the authors hard code some initial values which are then taken for machine learning.
 Some initial skip_values are defined and then the array (vector) is grown to include more. Define probabilities of moving from e_to_e and e_to_m
 (but not k to k or m to k?)
+I wonder if these initial hardcoded values are species specific?
 

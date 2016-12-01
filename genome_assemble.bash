@@ -3,8 +3,8 @@
 ###################################################
 #           	 GLOBAL PATHS                     #
 ###################################################
-#FILEMODE=$1
-FILENAME=$1
+FILEMODE=$1
+FILENAME=$2
 HOMEDIR=/home/ubuntu
 CURRENTPATH=$(pwd)
 export PATH=$HOMEDIR/nanopolish:$PATH
@@ -20,6 +20,11 @@ fi
 ###################################################
 #             Assembly instructions		  #
 ###################################################
+if [$FILEMODE == "gz"]
+	then
+		mkdir tempdir
+		cd tempdir
+		tar -xzf 
 
 poretools fasta $CURRENTPATH/$FILENAME > temp.fasta
 FILENAME=${FILENAME%%.}
