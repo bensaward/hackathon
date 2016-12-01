@@ -2,8 +2,8 @@
 #ifndef COVERMAX
 #define COVERMAX
 //draw function from rand if value is smaller than these
-#define SKIP 0.7
-#define INDELRATE 0.92
+#define SKIP 0.8
+#define INDELRATE 0.98
 //#define KMERDEL 1.0
 
 typedef unsigned short uint8_t;
@@ -181,17 +181,19 @@ void mutate(char *source, size_t coverage, size_t length)
         fprintf(fout, ">%d-%d-%d-mutate.fasta\n", rand(), rand(), i);
         for (int pos=0; pos<mutatedstringlen; pos++)
         {
-            drawmutationmode=rand()/RAND_MAX; //get random float between 0.0 and 1
+            drawmutationmode=rand()/(double)RAND_MAX;
+            //get random float between 0.0 and 1
+            //printf("random = %f\n", drawmutationmode);
             if (drawmutationmode > SKIP && drawmutationmode <= INDELRATE) // float is between 0.700..1 and 0.85
             {
                 mutatedstring[pos]=generateindel();
-                printf("point mutation!\n");
+               // printf("point mutation!\n");
             }
             if (drawmutationmode > INDELRATE)
             {
                 int kmerdeletedlen=generatekmerdel(&mutatedstring, pos, strlen(mutatedstring));
                 mutatedstringlen-=kmerdeletedlen;
-                printf("kmer deletion\n");
+              //  printf("kmer deletion\n");
             }
         }
         fprintf(fout, "%s\n", mutatedstring);
