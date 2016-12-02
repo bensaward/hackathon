@@ -89,6 +89,9 @@ Day 5
 --The sun rises over the final day of the DTP Hackathon 2016
 Tidying up the presentation and github repo. Waiting with anticipation to see what the outcome of nanopolish is. 
 
+--Update. T-minus 1 hour to launch.
+Nanopolish is STILL running. Killed it. Ben tried to run his script and then put it into Canu, Canu failed. Presentation is almost done, we just need to practice. Repo looking well swanky. 
+
 
 
 
