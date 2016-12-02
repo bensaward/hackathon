@@ -1,5 +1,5 @@
 #Hackathon
-Lets make <del>nanopore</del>, <del>canu</del>, de-novo genome assembly(?) better!
+Lets make <del>NanoPolish</del>, <del>Canu</del>, de-novo genome assembly(?) better!
 
 
 ##Blog created 
