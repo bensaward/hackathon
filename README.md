@@ -1,17 +1,11 @@
 #Hackathon
-Lets make nanopolish better!
+Lets make <del>nanopore</del>, <del>canu</del>, de-novo genome assembly(?) better!
 
-https://github.com/jts/nanopolish
 
 ##Blog created 
-Loacated in the git hub repository, the blog will provide regular updates of our progress!!
+Loacated in the BLOG.txt repository, the blog will provide regular updates of our progress and its hilarious to read!
 
-##A different, useful Blog
-http://simpsonlab.github.io/2016/02/25/deprecating-nanocorrect/
+##Wiki
+Please see our wiki page for more information on the project!
 
-##Location of the electrical current scores (mean & SD)
-/nanopolish/etc/r9-models
-
-##Personal logs
-logs/
 
