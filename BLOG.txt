@@ -78,6 +78,16 @@ So we thought we were working with BC01 data. After QUASTing our canu assembly w
 --End of the day (well at least the day at the DTC)
 Actually feel like we have achieved something! We got an 85% genome assembly from raw ecoli nanopore reads. Just a shame we were held back by incorrect file names as it would be good to run nanopolish now but I'm not sure there is enough time. If we could do this then our whole pipeline would pretty much be achieved.  
 
+--Evening
+Ben has tried to push the contigs through nanopolish (ecoli, was BC01) but found that nanopolish won't work with more than one contig, which we have :(
+
+--Message from Ben 00:59am
+"I found out how to run nanoploish and its currently soaking the two biggest contigs in glorious dtp cpu power" !!!!!
+
+Day 5
+
+--The sun rises over the final day of the DTP Hackathon 2016
+Tidying up the presentation and github repo. Waiting with anticipation to see what the outcome of nanopolish is. 
 
 
 
